@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login</title>
+	<!-- <link rel="stylesheet" href="./styles/styles.css"> -->
+	<style type="text/css">
+		@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;800&display=swap");
+
+		:root {
+			--cor-background: #f7f8fa;
+			--cor-white: #fff;
+			--cor-text: #241a52;
+			--cor-text-low: #c4bfd4;
+			--cor-border-input-desabilitas: #f2f1f6;
+			--cor-primary: #7e63ff;
+			--cor-placeholder: #837dff;
+			--cor-linear-1: #8dacff;
+			--cor-linear-2: #7c5dff;
+			--cor-background-notfocus: rgba(255, 255, 255, 0.15);
+			--cor-shadow-notfocus: rgba(0, 0, 0, 0.1);
+			--cor-borda-notfocus: rgba(255, 255, 255, 0.2);
+		}
+
+		* {
+			font-family: "Open Sans", sans-serif;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			letter-spacing: 0px;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			scroll-behavior: smooth;
+			margin: 0;
+			padding: 0;
+		}
+
+		html,
+		body {
+			/* width: 100%; */
+			height: 100%;
+			width: 100%;
+			display: grid;
+			place-items: center;
+			background-color: var(--cor-primary);
+		}
+
+		main.card {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			width: 100%;
+			max-width: 900px;
+			background-color: var(--cor-white);
+			column-gap: 30px;
+			padding: 2rem 3rem;
+			border-radius: 30px;
+		}
+
+		main.card section.left .img__logo {
+			width: 70px;
+			margin-bottom: 0.5rem;
+		}
+
+		main.card section.left h3.title__login {
+			font-weight: 800;
+			font-size: 1.5rem;
+			color: var(--cor-text);
+		}
+
+		main.card section.left span.subtitle {
+			font-size: 0.9rem;
+			color: var(--cor-text-low);
+			margin: 1rem 0;
+			display: inline-block;
+		}
+
+		main.card section.left form .box__input {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 1rem;
+		}
+
+		main.card section.left form .box__input label {
+			font-size: 0.9rem;
+			margin-bottom: 0.2rem;
+			font-weight: 500;
+		}
+
+		main.card section.left form .box__input label::after {
+			content: "*";
+			color: var(--cor-primary);
+		}
+
+		main.card section.left form .box__input input {
+			color: var(--cor-text);
+			border-radius: 30px;
+			height: 40px;
+			padding-left: 10px;
+			outline: none;
+			border: 2px solid transparent;
+			background-image: linear-gradient(var(--cor-white), var(--cor-white)),
+				linear-gradient(to right,
+					var(--cor-border-input-desabilitas),
+					var(--cor-border-input-desabilitas));
+			background-origin: border-box;
+			background-clip: padding-box, border-box;
+			caret-color: var(--cor-linear-1);
+		}
+
+		main.card section.left form .box__input input:focus {
+			background-image: linear-gradient(var(--cor-white), var(--cor-white)),
+				linear-gradient(to right, var(--cor-linear-1), var(--cor-linear-2));
+		}
+
+		main.card section.left .control__pass {
+			display: flex;
+			justify-content: flex-end;
+			margin-bottom: 1rem;
+		}
+
+		main.card section.left .control__pass span.forgot__password {
+			font-size: 0.9rem;
+			cursor: pointer;
+			font-weight: 500;
+			background: linear-gradient(to right,
+					var(--cor-linear-1),
+					var(--cor-linear-2));
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+
+		main.card section.left .control__access {
+			display: flex;
+			flex-direction: column;
+			padding-top: 1rem;
+		}
+
+		main.card section.left .control__access button {
+			border-radius: 30px;
+			height: 43px;
+			/* margin-bottom: 1rem; */
+			border: none;
+			font-weight: 600;
+			cursor: pointer;
+		}
+
+		main.card section.left .control__access button[type="submit"] {
+			background: linear-gradient(to right,
+					var(--cor-linear-1),
+					var(--cor-linear-2));
+			color: var(--cor-white);
+		}
+
+		main.card section.left .control__access button.btn__register {
+			border: 2px solid transparent;
+			background-image: linear-gradient(var(--cor-white), var(--cor-white)),
+				linear-gradient(to right, var(--cor-linear-1), var(--cor-linear-2));
+			margin-bottom: 1rem;
+			background-origin: border-box;
+			background-clip: padding-box, border-box;
+		}
+
+		main.card section.left .control__access button.btn__register .btn__register--text {
+			background: linear-gradient(to right,
+					var(--cor-linear-1),
+					var(--cor-linear-2));
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+
+		main.card section.left .cutoff {
+			display: grid;
+			grid-template-columns: 1.5fr 1.5fr 1.5fr;
+			align-items: center;
+			text-align: center;
+			margin: 0.8rem 0;
+		}
+
+		main.card section.left .cutoff span:nth-child(1),
+		main.card section.left .cutoff span:nth-child(3) {
+			display: block;
+			width: 100%;
+			height: 1px;
+			background-color: var(--cor-text-low);
+		}
+
+		main.card section.left .cutoff span:nth-child(2) {
+			color: var(--cor-text-low);
+			font-size: 0.9rem;
+		}
+
+		/* main.card section.left .controle__login_social {
+			display: flex;
+			flex-direction: column;
+		}
+
+		main.card section.left .controle__login_social a {
+			border: 1px solid var(--cor-text-low);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 1rem;
+			padding: 0.8rem 0;
+			border-radius: 30px;
+			text-decoration: none;
+			font-size: 0.8rem;
+			font-weight: 600;
+			color: var(--cor-text);
+		} */
+
+		/* main.card section.left .controle__login_social a img {
+			width: 18px;
+			margin-right: 0.5rem;
+		} */
+
+		main.card section.left section.pwd {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			column-gap: 15px;
+		}
+
+
+		main.card section.right .background__img {
+			background: linear-gradient(to right,
+					var(--cor-linear-1),
+					var(--cor-linear-2));
+			height: 100%;
+			width: 100%;
+			min-width: 360px;
+			border-radius: 20px;
+			position: relative;
+		}
+
+		main.card section.right .background__img .desc__app {
+			position: absolute;
+			top: 70px;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			/* display: flex; */
+			/* margin-top: 15rem; */
+			justify-content: center;
+			align-items: center;
+			width: 90%;
+			margin: auto;
+			z-index: 1;
+		}
+
+		main.card section.right .background__img .desc__app--in {
+			background-color: var(--cor-background-notfocus);
+			border-radius: 6px;
+			box-shadow: 0 4px 30px var(--cor-shadow-notfocus);
+			backdrop-filter: blur(9px);
+			-webkit-backdrop-filter: blur(9px);
+			border: 1px solid var(--cor-borda-notfocus);
+			padding: 20px;
+		}
+
+		main.card section.right .background__img .desc__app--in span {
+			font-weight: 800;
+			color: var(--cor-white);
+			text-shadow: 0 0 5px var(--cor-text);
+		}
+
+		main.card section.right .background__img img {
+			position: absolute;
+			bottom: 0;
+			right: 10px;
+			max-width: 75%;
+		}
+
+		@media screen and (max-width: 800px) {
+
+			html,
+			body {
+				background: linear-gradient(to right,
+						var(--cor-linear-1),
+						var(--cor-linear-2));
+				margin-top: 2rem;
+				margin-bottom: 2rem;
+				padding-right: 1rem;
+				padding-left: 1rem;
+			}
+
+			main.card {
+				padding: 2rem 1rem;
+				/* margin: 2rem; */
+				grid-template-columns: 1fr;
+				margin-bottom: 2rem;
+				margin-right: 0.5rem;
+				margin-left: 0.5rem;
+			}
+
+			main.card section.right .background__img {
+				/* height: 150px; */
+				/* margin-bottom: 2rem; */
+				display: none;
+			}
+
+			main.card section.right .background__img img {
+				/* height: 130px; */
+				display: none;
+			}
+		}
+
+		@media screen and (max-width: 480px) {
+
+
+			html,
+			body {
+				background: linear-gradient(to right,
+						var(--cor-linear-1),
+						var(--cor-linear-2));
+				margin-top: 2rem;
+				margin-bottom: 2rem;
+				height: unset;
+			}
+
+			main.card {
+				padding: 2rem 1rem;
+				margin-bottom: 2rem;
+				margin-right: 1rem;
+				margin-left: 1rem;
+			}
+
+			main.card section.left section.pwd {
+				grid-template-columns: 1fr;
+				width: 100%;
+			}
+
+			main.card section.right .background__img {
+				display: none;
+			}
+
+			main.card section.right .background__img img {
+				display: none;
+			}
+		}
+
+	</style>
+</head>
+
+<body>
+	<main class="card">
+		<section class="left">
+			<img src="brand.png" alt="logo" class="img__logo" />
+			<h3 class="title__login">Login</h3>
+			<span class="subtitle">Payroll Application</span>
+			<form class="inline">
+				<section class="box__input">
+					<label>Your Name</label>
+					<input type="text" placeholder="Email" />
+				</section>
+				<section class="box__input">
+					<label>Email</label>
+					<input type="text" placeholder="Email" />
+				</section>
+				<section class="pwd">
+					<section class="box__input p1">
+						<label>Password</label>
+						<input type="password" placeholder="Password" />
+					</section>
+					<section class="box__input p2">
+						<label>Repeat Password</label>
+						<input type="password" placeholder="Password" />
+					</section>
+				</section>
+			</form>
+			<!-- <section class="control__pass">
+				<span class="forgot__password">
+					Forgot Password?
+				</span>
+			</section> -->
+			<section class="control__access">
+				<button type="submit">Login</button>
+				<section class="cutoff">
+					<span></span>
+					<span>or</span>
+					<span></span>
+				</section>
+				<button class="btn__register">
+					<span class="btn__register--text">Register</span>
+				</button>
+			</section>
+		</section>
+		<section class="right">
+			<div class="background__img">
+				<div class="desc__app">
+					<div class="desc__app--in">
+						<span>Payroll application is an application that makes it easier for companies to manage
+							employee salaries.</span>
+					</div>
+				</div>
+				<img src="bg-login.svg" alt="#">
+			</div>
+		</section>
+	</main>
+</body>
+
+</html>

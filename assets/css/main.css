@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Poppins", sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+
+.admin {
+	color: #fff;
+	background: rgb(0, 215, 255);
+	background: linear-gradient(329deg, rgba(0, 215, 255, 1) 0%, rgba(0, 150, 255, 1) 40%, rgba(31, 70, 144, 1) 100%);
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+	box-shadow: 0 0 5px 0 solid #222;
+}
+
+.karyawan {
+	color: #fff;
+	background: rgb(254, 249, 167);
+	background: linear-gradient(329deg, rgba(254, 249, 167, 1) 0%, rgba(250, 194, 19, 1) 40%, rgba(247, 126, 33, 1) 100%);
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+	box-shadow: 0 0 5px 0 solid #222;
+}
+
+.jabatan {
+	color: #fff;
+	background: rgb(175, 235, 136);
+	background: linear-gradient(329deg, rgba(175, 235, 136, 1) 0%, rgba(109, 184, 50, 1) 40%, rgba(22, 121, 23, 1) 100%);
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+	box-shadow: 0 0 5px 0 solid #222;
+}
+
+.absensi {
+	color: #fff;
+	background: rgb(250, 148, 148);
+	background: linear-gradient(329deg, rgba(250, 148, 148, 1) 0%, rgba(230, 72, 72, 1) 40%, rgba(194, 16, 16, 1) 100%);
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+	box-shadow: 0 0 5px 0 solid #222;
+}
+
+.admin:hover,
+.admin:focus {
+	box-shadow: 0 0 10px 0 rgba(0, 150, 255, 1)
+}
+
+.karyawan:hover,
+.karyawan:focus {
+	box-shadow: 0 0 10px 0 rgba(250, 194, 19, 1)
+}
+
+.jabatan:hover,
+.jabatan:focus {
+	box-shadow: 0 0 10px 0 rgba(109, 184, 50, 1)
+}
+
+.absensi:hover,
+.absensi:focus {
+	box-shadow: 0 0 10px 0 rgba(230, 72, 72, 1)
+}
